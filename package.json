@@ -1,0 +1,14 @@
+{
+  "name": "sounds-university",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Audio-first university platform",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=26.13.0 <27",
+    "pnpm": "12.16.1"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}
