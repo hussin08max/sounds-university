@@ -421,7 +421,7 @@ None of the above is approved by virtue of appearing in this report.
 | --- | --- |
 | Registered conflicts | 3 (CONF-001..003) |
 | Consistency-matrix GAP/AMBIGUOUS/FUTURE items | See section 5 (majority CONSISTENT) |
-| Open questions tabulated | 22 (OQ-*) |
+| Open questions tabulated | 25 (OQ-*: I4 + A5 + G3 + L4 + T5 + O4) |
 | Approval-required decisions listed | 7 (DEC-*) |
 | Critical blockers for regulated launch | 4 |
 | Readiness conclusion | READY WITH CONDITIONS (PSA-1); NOT READY (regulated awards) |
