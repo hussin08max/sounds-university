@@ -1,0 +1,17 @@
+# Dependencies and generated artefacts
+node_modules
+pnpm-lock.yaml
+dist
+build
+out
+coverage
+.next
+.turbo
+.cache
+
+# Canonical academic / institutional source documents must not be auto-formatted
+docs/institutional/
+docs/academic/
+docs/governance/
+docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md
+docs/project-history/

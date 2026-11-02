@@ -9,50 +9,50 @@ This is the master progress dashboard. Task-level details and verification evide
 
 ## Status legend
 
-| Status | Meaning |
-|---|---|
-| NOT STARTED | No implementation work has begun |
-| IN PROGRESS | Work is actively underway |
-| BLOCKED | A missing dependency or decision prevents progress |
-| PARTIAL | Some acceptance criteria are satisfied, not all |
-| PASS | All acceptance criteria met with recorded evidence |
-| NOT VERIFIED | Work may exist but has not been verified |
-| DEFERRED | Intentionally postponed with reason |
-| REJECTED | Explicitly not accepted, with rationale |
+| Status       | Meaning                                            |
+| ------------ | -------------------------------------------------- |
+| NOT STARTED  | No implementation work has begun                   |
+| IN PROGRESS  | Work is actively underway                          |
+| BLOCKED      | A missing dependency or decision prevents progress |
+| PARTIAL      | Some acceptance criteria are satisfied, not all    |
+| PASS         | All acceptance criteria met with recorded evidence |
+| NOT VERIFIED | Work may exist but has not been verified           |
+| DEFERRED     | Intentionally postponed with reason                |
+| REJECTED     | Explicitly not accepted, with rationale            |
 
 **Completion rule:** Never infer completion from file creation, generated code, a successful-looking screen or an unexecuted test. Evidence is mandatory.
 
 ## Phase dashboard
 
-| Phase | Name | Status | Detailed tracker |
-|---|---|---|---|
-| PSA-0 | Project Foundation | IN PROGRESS | [PSA-0 checklist](./docs/roadmap/PSA-0-FOUNDATION.md) |
-| PSA-1 | Runtime and Application Skeleton | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-2 | Database and Persistence Foundation | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-3 | Identity and Access Foundation | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-4 | Academic Core | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-5 | Content and Academic Approval | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-6 | Media and Audio Learning | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-7 | Student and Enrolment | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-8 | Assessment and Academic Records | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-9 | Governance and Quality Operations | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-10 | Commercial and Communications | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| Phase  | Name                                            | Status      | Detailed tracker                                                                                                      |
+| ------ | ----------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
+| PSA-0  | Project Foundation                              | IN PROGRESS | [PSA-0 checklist](./docs/roadmap/PSA-0-FOUNDATION.md)                                                                 |
+| PSA-1  | Runtime and Application Skeleton                | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-2  | Database and Persistence Foundation             | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-3  | Identity and Access Foundation                  | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-4  | Academic Core                                   | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-5  | Content and Academic Approval                   | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-6  | Media and Audio Learning                        | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-7  | Student and Enrolment                           | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-8  | Assessment and Academic Records                 | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-9  | Governance and Quality Operations               | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-10 | Commercial and Communications                   | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-11 | Reporting, Reliability and Production Readiness | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
-| PSA-12 | External Readiness and Evolution | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-12 | External Readiness and Evolution                | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 
 ## Current task snapshot
 
-| Task ID | Short description | Status |
-|---|---|---|
-| PSA-0001 | Reconcile and import foundational documents | PARTIAL |
-| PSA-0002 | Repository and branch strategy | PARTIAL |
-| PSA-0003 | AGENTS.md | PASS |
-| PSA-0004 | Architecture entry point | PASS |
-| PSA-0005 | ADR template/register | PASS |
-| PSA-0006 | Master roadmap/status tracking | PASS |
-| PSA-0007 | Pin Node.js, pnpm and TypeScript | PARTIAL |
-| PSA-0008 | Formatting, lint and typecheck | NOT STARTED |
-| PSA-0009 | Basic CI | NOT STARTED |
+| Task ID  | Short description                           | Status      |
+| -------- | ------------------------------------------- | ----------- |
+| PSA-0001 | Reconcile and import foundational documents | PARTIAL     |
+| PSA-0002 | Repository and branch strategy              | PARTIAL     |
+| PSA-0003 | AGENTS.md                                   | PASS        |
+| PSA-0004 | Architecture entry point                    | PASS        |
+| PSA-0005 | ADR template/register                       | PASS        |
+| PSA-0006 | Master roadmap/status tracking              | PASS        |
+| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS        |
+| PSA-0008 | Formatting, lint and typecheck              | PASS        |
+| PSA-0009 | Basic CI                                    | NOT STARTED |
 
 ## Foundational source documents
 
@@ -72,11 +72,12 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 
 ## Change log
 
-| Date | Change |
-|---|---|
-| 2026-11-02 | Initial repository structure and governance documentation created |
-| 2026-11-02 | Imported five canonical source documents and supplementary planning notes |
-| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open |
+| Date       | Change                                                                                   |
+| ---------- | ---------------------------------------------------------------------------------------- |
+| 2026-11-02 | Initial repository structure and governance documentation created                        |
+| 2026-11-02 | Imported five canonical source documents and supplementary planning notes                |
+| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open           |
+| 2026-11-02 | Verified PSA-0007 toolchain pin and lockfile; established PSA-0008 format/lint/typecheck |
 
 ## Project rules
 

@@ -76,5 +76,5 @@ Acceptance evidence, tests, links to implementation and review records.
 ## 12. Approval
 
 | Authority | Decision | Name/role | Date | Evidence |
-|---|---|---|---|---|
-| | | | | |
+| --------- | -------- | --------- | ---- | -------- |
+|           |          |           |      |          |

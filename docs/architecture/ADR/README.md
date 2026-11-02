@@ -22,9 +22,9 @@ This directory stores material technical decisions for Sounds University.
 
 ## Register
 
-| ADR | Title | Status | Decision date |
-|---|---|---|---|
-| ADR-0000 | ADR process and template | ACCEPTED as repository convention | 2026-11-02 |
+| ADR      | Title                    | Status                            | Decision date |
+| -------- | ------------------------ | --------------------------------- | ------------- |
+| ADR-0000 | ADR process and template | ACCEPTED as repository convention | 2026-11-02    |
 
 The baseline decisions listed in AU-PSA-001 section 28 remain the architecture baseline. Implementation-specific choices (for example, exact authentication, hosting, storage or payment provider) require their own ADR when the relevant phase is reached.
 
