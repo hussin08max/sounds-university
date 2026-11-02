@@ -44,7 +44,7 @@ This is the master progress dashboard. Task-level details and verification evide
 
 | Task ID  | Short description                           | Status      |
 | -------- | ------------------------------------------- | ----------- |
-| PSA-0001 | Reconcile and import foundational documents | PARTIAL     |
+| PSA-0001 | Reconcile and import foundational documents | PASS        |
 | PSA-0002 | Repository and branch strategy              | PARTIAL     |
 | PSA-0003 | AGENTS.md                                   | PASS        |
 | PSA-0004 | Architecture entry point                    | PASS        |
@@ -79,6 +79,7 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 | 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open            |
 | 2026-11-02 | Verified PSA-0007 toolchain pin and lockfile; established PSA-0008 format/lint/typecheck  |
 | 2026-11-02 | Added SHA-pinned GitHub Actions CI workflow for PSA-0009; awaiting successful Actions run |
+| 2026-11-02 | Completed PSA-0001 foundational documents reconciliation report (AU-FDR-001)              |
 
 ## Project rules
 

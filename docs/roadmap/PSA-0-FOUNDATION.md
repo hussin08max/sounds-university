@@ -11,17 +11,17 @@ Establish a controlled, understandable and reproducible repository foundation be
 
 ## Task checklist
 
-| Task ID  | Task                                                       | Status      | Acceptance / evidence                                                                                                                                                                                                                                                                                                                |
-| -------- | ---------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| PSA-0001 | Read, import and reconcile the five foundational documents | PARTIAL     | All five canonical documents imported in full to their canonical paths. Supplementary curriculum research and project-origin notes preserved. Cross-document reconciliation report, authority mapping and explicit conflict/open-question register still required.                                                                   |
-| PSA-0002 | Establish repository and branch strategy                   | PARTIAL     | Private repository `hussin08max/sounds-university`, default branch `main`, and admin/push access confirmed. Working branch `chore/psa-0-toolchain` created. Branch protection/ruleset could not be inspected or configured through the current GitHub integration (API returned 403); must be checked in GitHub repository settings. |
-| PSA-0003 | Create `AGENTS.md`                                         | PASS        | Engineering rules committed. Includes source precedence, task contract, security, documentation and evidence-based completion requirements.                                                                                                                                                                                          |
-| PSA-0004 | Create `ARCHITECTURE.md` and link technical reference      | PASS        | Architecture entry point committed and links to the canonical AU-PSA-001 document.                                                                                                                                                                                                                                                   |
-| PSA-0005 | Create ADR template and decision register                  | PASS        | ADR process, register and reusable template committed.                                                                                                                                                                                                                                                                               |
-| PSA-0006 | Create `ROADMAP.md` and task status conventions            | PASS        | Master dashboard and detailed PSA-0 checklist committed; all task states and evidence rules documented.                                                                                                                                                                                                                              |
-| PSA-0007 | Pin Node.js, pnpm and TypeScript versions                  | PASS        | Exact baseline verified locally: Node.js v26.13.0, pnpm 12.16.1, TypeScript Version 6.0.3. `pnpm install` and `pnpm install --frozen-lockfile` succeeded. `pnpm-lock.yaml` committed in `d6494d6`.                                                                                                                                   |
-| PSA-0008 | Establish formatting, lint and typecheck                   | PASS        | Prettier 3.9.10, ESLint 10.14.0, typescript-eslint 8.72.1, eslint-config-prettier 10.1.8, @eslint/js 10.0.1 configured. Scripts `format`, `format:check`, `lint`, `typecheck` verified exit 0. Canonical academic documents excluded from Prettier. See verification log.                                                            |
-| PSA-0009 | Establish CI pipeline for basic checks                     | IN PROGRESS | Workflow `.github/workflows/ci.yml` added with SHA-pinned actions, least-privilege permissions, frozen lockfile install, and `format:check` / `lint` / `typecheck`. Local quality checks pass. Awaiting a successful GitHub Actions run before marking PASS.                                                                         |
+| Task ID  | Task                                                       | Status      | Acceptance / evidence                                                                                                                                                                                                                                                                                                                                    |
+| -------- | ---------------------------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PSA-0001 | Read, import and reconcile the five foundational documents | PASS        | All five canonical documents imported and examined in full. Reconciliation report committed at `docs/governance/FOUNDATIONAL_DOCUMENTS_RECONCILIATION.md` (AU-FDR-001): authority mapping, consistency matrix, conflict register (3 OPEN), requirements traceability, open questions, and readiness **READY WITH CONDITIONS**. Canonical five unchanged. |
+| PSA-0002 | Establish repository and branch strategy                   | PARTIAL     | Private repository `hussin08max/sounds-university`, default branch `main`, and admin/push access confirmed. Working branch `chore/psa-0-toolchain` created. Branch protection/ruleset could not be inspected or configured through the current GitHub integration (API returned 403); must be checked in GitHub repository settings.                     |
+| PSA-0003 | Create `AGENTS.md`                                         | PASS        | Engineering rules committed. Includes source precedence, task contract, security, documentation and evidence-based completion requirements.                                                                                                                                                                                                              |
+| PSA-0004 | Create `ARCHITECTURE.md` and link technical reference      | PASS        | Architecture entry point committed and links to the canonical AU-PSA-001 document.                                                                                                                                                                                                                                                                       |
+| PSA-0005 | Create ADR template and decision register                  | PASS        | ADR process, register and reusable template committed.                                                                                                                                                                                                                                                                                                   |
+| PSA-0006 | Create `ROADMAP.md` and task status conventions            | PASS        | Master dashboard and detailed PSA-0 checklist committed; all task states and evidence rules documented.                                                                                                                                                                                                                                                  |
+| PSA-0007 | Pin Node.js, pnpm and TypeScript versions                  | PASS        | Exact baseline verified locally: Node.js v26.13.0, pnpm 12.16.1, TypeScript Version 6.0.3. `pnpm install` and `pnpm install --frozen-lockfile` succeeded. `pnpm-lock.yaml` committed in `d6494d6`.                                                                                                                                                       |
+| PSA-0008 | Establish formatting, lint and typecheck                   | PASS        | Prettier 3.9.10, ESLint 10.14.0, typescript-eslint 8.72.1, eslint-config-prettier 10.1.8, @eslint/js 10.0.1 configured. Scripts `format`, `format:check`, `lint`, `typecheck` verified exit 0. Canonical academic documents excluded from Prettier. See verification log.                                                                                |
+| PSA-0009 | Establish CI pipeline for basic checks                     | IN PROGRESS | Workflow `.github/workflows/ci.yml` added with SHA-pinned actions, least-privilege permissions, frozen lockfile install, and `format:check` / `lint` / `typecheck`. Local quality checks pass. Awaiting a successful GitHub Actions run before marking PASS.                                                                                             |
 
 ## Foundational documents imported
 
@@ -178,11 +178,38 @@ Local verification before commit (must still be followed by a real Actions run):
 
 Status rule: PSA-0009 stays `IN PROGRESS` until GitHub Actions reports a successful workflow run for this CI definition.
 
+### 2026-11-02 — PSA-0001 foundational documents reconciliation
+
+Report: `docs/governance/FOUNDATIONAL_DOCUMENTS_RECONCILIATION.md` (AU-FDR-001).
+
+Examined in full:
+
+- `docs/institutional/UNIVERSITY_MASTER_BLUEPRINT.md`
+- `docs/academic/ACADEMIC_CONTENT_DEVELOPMENT_STANDARD.md`
+- `docs/academic/ACADEMIC_CURRICULUM_ARCHITECTURE.md`
+- `docs/governance/ACADEMIC_GOVERNANCE_QUALITY_ASSURANCE_FRAMEWORK.md`
+- `docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md`
+
+Supplementary context only:
+
+- `docs/academic/research/WHERE_TO_FIND_CURRICULA.md`
+- `docs/academic/research/INITIAL_CURRICULA_AND_TEACHING_MODEL.md`
+- `docs/project-history/PROJECT_ORIGIN_NOTES.txt`
+
+Recorded outcomes:
+
+- Existing precedence documented from AU-PSA-001 §0.4 and AU-AGQ-001 Interpretation (not invented as a silent new rule).
+- Consistency matrix across 17 subject areas; core academic non-negotiables CONSISTENT.
+- Conflict register: 3 OPEN items (CONF-001 authority wording; CONF-002 naming; CONF-003 UMB path inventory drift).
+- Requirements traceability and prioritized open questions recorded.
+- Implementation readiness: **READY WITH CONDITIONS** for PSA-1 skeleton; **NOT READY** for regulated degree claims/launch.
+- Canonical five documents unchanged by this task.
+
 ## Open items / risks
 
-1. Complete a cross-document reconciliation report for PSA-0001, preserving the documents' authority and recording conflicts instead of silently rewriting them.
+1. Resolve approval-required decisions from AU-FDR-001 (especially DEC-AUTH-001, DEC-NAME-001, DEC-JURIS-001, DEC-PROG-001) without silently editing canonical sources.
 2. Inspect GitHub Settings → Rules → Rulesets / Branch protection for `main`; configure PR-based integration, block force-push and deletion, and require the CI check once a successful Actions run exists. Avoid requiring an approving review if this remains a single-maintainer repository.
-3. Push/PR the CI workflow and confirm a successful GitHub Actions run (required for PSA-0009 PASS).
+3. Confirm a successful GitHub Actions run for `.github/workflows/ci.yml` (required for PSA-0009 PASS).
 4. When PSA-1 introduces apps/packages, extend ESLint/TS project references and revisit type-aware linting.
 
 ## Exit gate

@@ -25,6 +25,7 @@ sounds-university/
 │   ├── institutional/            # Institutional blueprint and policy
 │   ├── academic/                 # Academic curriculum and content standards
 │   ├── governance/               # Governance and quality framework
+│   │   └── FOUNDATIONAL_DOCUMENTS_RECONCILIATION.md  # PSA-0001 reconciliation (AU-FDR-001)
 │   ├── architecture/
 │   │   ├── ADR/
 │   │   ├── diagrams/
