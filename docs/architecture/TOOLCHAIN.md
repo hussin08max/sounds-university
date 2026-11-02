@@ -1,8 +1,8 @@
 # Development Toolchain Baseline
 
-**Status:** Verified PSA-0 baseline
+**Status:** Verified PSA-0 baseline; CI workflow added, Actions run pending
 **Reviewed:** 2026-11-02
-**Related tasks:** PSA-0007, PSA-0008
+**Related tasks:** PSA-0007, PSA-0008, PSA-0009
 
 ## Pinned versions
 
@@ -71,6 +71,43 @@ Observed:
 - `pnpm-lock.yaml` first committed in `d6494d6`; updated again by pnpm when quality-tool dependencies were added.
 - `pnpm format:check`, `pnpm lint`, `pnpm typecheck`, and `git diff --check` all exited 0.
 
+## Continuous integration (PSA-0009)
+
+Workflow path: [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml)
+
+| Item          | Value                                                     |
+| ------------- | --------------------------------------------------------- |
+| Workflow name | `CI`                                                      |
+| Job name      | `Format, lint, and typecheck` (`quality`)                 |
+| Triggers      | `pull_request` → `main`; `push` → `chore/psa-0-toolchain` |
+| Runner        | `ubuntu-latest`                                           |
+| Permissions   | `contents: read` only                                     |
+| Node.js       | `26.13.0`                                                 |
+| pnpm          | `12.16.1`                                                 |
+| Install       | `pnpm install --frozen-lockfile`                          |
+| Checks        | `pnpm format:check`, `pnpm lint`, `pnpm typecheck`        |
+
+### Pinned GitHub Actions
+
+Third-party actions are pinned to full commit SHAs. Version comments are documentation only.
+
+| Action               | Release | Pinned commit SHA                          | Verification source                                                                                                                                                                    |
+| -------------------- | ------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `actions/checkout`   | v7.0.1  | `3d3c42e5aac5ba805825da76410c181273ba90b1` | GitHub API tag ref `refs/tags/v7.0.1` resolves to this commit object; release https://github.com/actions/checkout/releases/tag/v7.0.1                                                  |
+| `pnpm/action-setup`  | v6.1.0  | `ea17c68df8912ef543352723c149a84f56e3d413` | Annotated tag `v6.1.0` object resolved via GitHub API git tag endpoint to this commit; release notes confirm pnpm v12 support https://github.com/pnpm/action-setup/releases/tag/v6.1.0 |
+| `actions/setup-node` | v7.1.0  | `949feb2413d6458794dcd2491c4babbbce0c15c1` | GitHub API tag ref `refs/tags/v7.1.0` resolves to this commit object; release https://github.com/actions/setup-node/releases/tag/v7.1.0                                                |
+
+### CI security decisions
+
+- Least-privilege workflow permissions (`contents: read`).
+- No repository secrets and no secret references in the workflow.
+- No deployment, publish, or cloud credential steps.
+- Uses `pull_request` (not `pull_request_target`) for PR checks.
+- Concurrency group cancels superseded runs for the same PR or branch ref.
+- Install uses the committed lockfile only (`--frozen-lockfile`).
+
+PSA-0009 remains `IN PROGRESS` until a real GitHub Actions run for this workflow completes successfully.
+
 ## Upgrades
 
 Toolchain upgrades require:
@@ -78,8 +115,9 @@ Toolchain upgrades require:
 1. Confirmed stable release and support status.
 2. Compatibility check against Next.js, NestJS, Prisma and CI tooling in use.
 3. An explicit version update in the repository.
-4. A clean install and all relevant checks (`format:check`, `lint`, `typecheck`, and CI once PSA-0009 exists).
-5. Roadmap and verification log updates.
+4. A clean install and all relevant checks (`format:check`, `lint`, `typecheck`, and CI).
+5. Re-verify GitHub Action release tags and update pinned SHAs when changing Actions.
+6. Roadmap and verification log updates.
 
 ## Upstream references
 
@@ -92,3 +130,6 @@ Toolchain upgrades require:
 - Prettier releases: https://github.com/prettier/prettier/releases
 - ESLint releases: https://eslint.org/
 - typescript-eslint releases: https://github.com/typescript-eslint/typescript-eslint/releases
+- actions/checkout releases: https://github.com/actions/checkout/releases
+- pnpm/action-setup releases: https://github.com/pnpm/action-setup/releases
+- actions/setup-node releases: https://github.com/actions/setup-node/releases

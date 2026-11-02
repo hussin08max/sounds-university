@@ -52,7 +52,7 @@ This is the master progress dashboard. Task-level details and verification evide
 | PSA-0006 | Master roadmap/status tracking              | PASS        |
 | PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS        |
 | PSA-0008 | Formatting, lint and typecheck              | PASS        |
-| PSA-0009 | Basic CI                                    | NOT STARTED |
+| PSA-0009 | Basic CI                                    | IN PROGRESS |
 
 ## Foundational source documents
 
@@ -72,12 +72,13 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 
 ## Change log
 
-| Date       | Change                                                                                   |
-| ---------- | ---------------------------------------------------------------------------------------- |
-| 2026-11-02 | Initial repository structure and governance documentation created                        |
-| 2026-11-02 | Imported five canonical source documents and supplementary planning notes                |
-| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open           |
-| 2026-11-02 | Verified PSA-0007 toolchain pin and lockfile; established PSA-0008 format/lint/typecheck |
+| Date       | Change                                                                                    |
+| ---------- | ----------------------------------------------------------------------------------------- |
+| 2026-11-02 | Initial repository structure and governance documentation created                         |
+| 2026-11-02 | Imported five canonical source documents and supplementary planning notes                 |
+| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open            |
+| 2026-11-02 | Verified PSA-0007 toolchain pin and lockfile; established PSA-0008 format/lint/typecheck  |
+| 2026-11-02 | Added SHA-pinned GitHub Actions CI workflow for PSA-0009; awaiting successful Actions run |
 
 ## Project rules
 

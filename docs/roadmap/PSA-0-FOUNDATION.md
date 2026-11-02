@@ -21,7 +21,7 @@ Establish a controlled, understandable and reproducible repository foundation be
 | PSA-0006 | Create `ROADMAP.md` and task status conventions            | PASS        | Master dashboard and detailed PSA-0 checklist committed; all task states and evidence rules documented.                                                                                                                                                                                                                              |
 | PSA-0007 | Pin Node.js, pnpm and TypeScript versions                  | PASS        | Exact baseline verified locally: Node.js v26.13.0, pnpm 12.16.1, TypeScript Version 6.0.3. `pnpm install` and `pnpm install --frozen-lockfile` succeeded. `pnpm-lock.yaml` committed in `d6494d6`.                                                                                                                                   |
 | PSA-0008 | Establish formatting, lint and typecheck                   | PASS        | Prettier 3.9.10, ESLint 10.14.0, typescript-eslint 8.72.1, eslint-config-prettier 10.1.8, @eslint/js 10.0.1 configured. Scripts `format`, `format:check`, `lint`, `typecheck` verified exit 0. Canonical academic documents excluded from Prettier. See verification log.                                                            |
-| PSA-0009 | Establish CI pipeline for basic checks                     | NOT STARTED | GitHub Actions workflow must execute on a pull request and pass.                                                                                                                                                                                                                                                                     |
+| PSA-0009 | Establish CI pipeline for basic checks                     | IN PROGRESS | Workflow `.github/workflows/ci.yml` added with SHA-pinned actions, least-privilege permissions, frozen lockfile install, and `format:check` / `lint` / `typecheck`. Local quality checks pass. Awaiting a successful GitHub Actions run before marking PASS.                                                                         |
 
 ## Foundational documents imported
 
@@ -128,13 +128,61 @@ Limitations:
 
 - No application TypeScript packages exist yet; typecheck covers only `toolchain-check.ts` under the root `tsconfig.json`.
 - ESLint uses non-type-aware recommended rules; type-aware rules deferred to PSA-1+.
-- CI automation is intentionally out of scope (PSA-0009).
+- CI automation tracked under PSA-0009 (workflow added; Actions run still required).
+
+### 2026-11-02 — PSA-0009 CI workflow (local preparation)
+
+Workflow created at `.github/workflows/ci.yml`.
+
+Triggers:
+
+- `pull_request` targeting `main`
+- `push` to `chore/psa-0-toolchain`
+
+Pinned runtime:
+
+- Node.js `26.13.0`
+- pnpm `12.16.1`
+- Install: `pnpm install --frozen-lockfile`
+
+CI checks:
+
+- `pnpm format:check`
+- `pnpm lint`
+- `pnpm typecheck`
+
+Pinned actions (full SHAs; sources recorded in `docs/architecture/TOOLCHAIN.md`):
+
+| Action               | Release | Commit SHA                                 |
+| -------------------- | ------- | ------------------------------------------ |
+| `actions/checkout`   | v7.0.1  | `3d3c42e5aac5ba805825da76410c181273ba90b1` |
+| `pnpm/action-setup`  | v6.1.0  | `ea17c68df8912ef543352723c149a84f56e3d413` |
+| `actions/setup-node` | v7.1.0  | `949feb2413d6458794dcd2491c4babbbce0c15c1` |
+
+Security decisions:
+
+- `permissions.contents: read` only
+- No secrets, credentials, or deployment steps
+- Uses `pull_request` (not `pull_request_target`)
+- Concurrency cancellation for superseded runs
+
+Local verification before commit (must still be followed by a real Actions run):
+
+| Command                          | Result |
+| -------------------------------- | ------ |
+| `pnpm install --frozen-lockfile` | exit 0 |
+| `pnpm format:check`              | exit 0 |
+| `pnpm lint`                      | exit 0 |
+| `pnpm typecheck`                 | exit 0 |
+| `git diff --check`               | exit 0 |
+
+Status rule: PSA-0009 stays `IN PROGRESS` until GitHub Actions reports a successful workflow run for this CI definition.
 
 ## Open items / risks
 
 1. Complete a cross-document reconciliation report for PSA-0001, preserving the documents' authority and recording conflicts instead of silently rewriting them.
-2. Inspect GitHub Settings → Rules → Rulesets / Branch protection for `main`; configure PR-based integration, block force-push and deletion, and require CI checks once available. Avoid requiring an approving review if this remains a single-maintainer repository.
-3. Add GitHub Actions for `format:check`, `lint` and `typecheck`, and verify a successful workflow run (PSA-0009).
+2. Inspect GitHub Settings → Rules → Rulesets / Branch protection for `main`; configure PR-based integration, block force-push and deletion, and require the CI check once a successful Actions run exists. Avoid requiring an approving review if this remains a single-maintainer repository.
+3. Push/PR the CI workflow and confirm a successful GitHub Actions run (required for PSA-0009 PASS).
 4. When PSA-1 introduces apps/packages, extend ESLint/TS project references and revisit type-aware linting.
 
 ## Exit gate

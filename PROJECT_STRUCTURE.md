@@ -45,6 +45,7 @@ sounds-university/
 │   └── architecture/
 ├── .github/
 │   └── workflows/
+│       └── ci.yml                # PSA-0009 quality checks (format/lint/typecheck)
 ├── .prettierrc.json              # Prettier options (PSA-0008)
 ├── .prettierignore               # Excludes canonical academic sources
 ├── eslint.config.mjs             # ESLint flat config (PSA-0008)
