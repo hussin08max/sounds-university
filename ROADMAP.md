@@ -5,7 +5,7 @@
 **Overall status:** IN PROGRESS  
 **Last updated:** 2026-11-02
 
-This is the master progress dashboard. Task-level details and verification evidence live in `docs/roadmap/`. Update both locations when phase/task status changes.
+This is the master progress dashboard. Task-level details and verification evidence live in `docs/roadmap/`. Update both locations whenever a task status changes.
 
 ## Status legend
 
@@ -44,15 +44,27 @@ This is the master progress dashboard. Task-level details and verification evide
 
 | Task ID | Short description | Status |
 |---|---|---|
-| PSA-0001 | Reconcile foundational documents | IN PROGRESS |
+| PSA-0001 | Reconcile and import foundational documents | PARTIAL |
 | PSA-0002 | Repository and branch strategy | PARTIAL |
 | PSA-0003 | AGENTS.md | PASS |
 | PSA-0004 | Architecture entry point | PASS |
 | PSA-0005 | ADR template/register | PASS |
-| PSA-0006 | Master roadmap/status tracking | IN PROGRESS |
-| PSA-0007 | Pin toolchain versions | NOT STARTED |
+| PSA-0006 | Master roadmap/status tracking | PASS |
+| PSA-0007 | Pin Node.js, pnpm and TypeScript | PARTIAL |
 | PSA-0008 | Formatting, lint and typecheck | NOT STARTED |
 | PSA-0009 | Basic CI | NOT STARTED |
+
+## Foundational source documents
+
+The five canonical documents are stored in full at these paths:
+
+1. [University Master Blueprint](./docs/institutional/UNIVERSITY_MASTER_BLUEPRINT.md)
+2. [Academic Content Development Standard](./docs/academic/ACADEMIC_CONTENT_DEVELOPMENT_STANDARD.md)
+3. [Academic Curriculum Architecture](./docs/academic/ACADEMIC_CURRICULUM_ARCHITECTURE.md)
+4. [Academic Governance and Quality Assurance Framework](./docs/governance/ACADEMIC_GOVERNANCE_QUALITY_ASSURANCE_FRAMEWORK.md)
+5. [Platform Software Architecture](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md)
+
+Supplementary planning material is preserved under [`docs/academic/research/`](./docs/academic/research/) and [`docs/project-history/`](./docs/project-history/). These sources provide context; they do not override the five canonical documents.
 
 ## Phase execution order
 
@@ -62,7 +74,9 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 
 | Date | Change |
 |---|---|
-| 2026-11-02 | Initial roadmap and PSA-0 tracker created; initial repository checked and documented |
+| 2026-11-02 | Initial repository structure and governance documentation created |
+| 2026-11-02 | Imported five canonical source documents and supplementary planning notes |
+| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open |
 
 ## Project rules
 
