@@ -2,8 +2,8 @@
 
 **Project:** Sounds University  
 **Current phase:** PSA-0 — Project Foundation  
-**Overall status:** IN PROGRESS  
-**Last updated:** 2026-11-02
+**Overall status:** IN PROGRESS (PSA-0 complete; PSA-1 not started)
+**Last updated:** 2026-11-04
 
 This is the master progress dashboard. Task-level details and verification evidence live in `docs/roadmap/`. Update both locations whenever a task status changes.
 
@@ -26,7 +26,7 @@ This is the master progress dashboard. Task-level details and verification evide
 
 | Phase  | Name                                            | Status      | Detailed tracker                                                                                                      |
 | ------ | ----------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| PSA-0  | Project Foundation                              | IN PROGRESS | [PSA-0 checklist](./docs/roadmap/PSA-0-FOUNDATION.md)                                                                 |
+| PSA-0  | Project Foundation                              | PASS        | [PSA-0 checklist](./docs/roadmap/PSA-0-FOUNDATION.md)                                                                 |
 | PSA-1  | Runtime and Application Skeleton                | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-2  | Database and Persistence Foundation             | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-3  | Identity and Access Foundation                  | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
@@ -42,17 +42,17 @@ This is the master progress dashboard. Task-level details and verification evide
 
 ## Current task snapshot
 
-| Task ID  | Short description                           | Status  |
-| -------- | ------------------------------------------- | ------- |
-| PSA-0001 | Reconcile and import foundational documents | PASS    |
-| PSA-0002 | Repository and branch strategy              | PARTIAL |
-| PSA-0003 | AGENTS.md                                   | PASS    |
-| PSA-0004 | Architecture entry point                    | PASS    |
-| PSA-0005 | ADR template/register                       | PASS    |
-| PSA-0006 | Master roadmap/status tracking              | PASS    |
-| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS    |
-| PSA-0008 | Formatting, lint and typecheck              | PASS    |
-| PSA-0009 | Basic CI                                    | PASS    |
+| Task ID  | Short description                           | Status |
+| -------- | ------------------------------------------- | ------ |
+| PSA-0001 | Reconcile and import foundational documents | PASS   |
+| PSA-0002 | Repository and branch strategy              | PASS   |
+| PSA-0003 | AGENTS.md                                   | PASS   |
+| PSA-0004 | Architecture entry point                    | PASS   |
+| PSA-0005 | ADR template/register                       | PASS   |
+| PSA-0006 | Master roadmap/status tracking              | PASS   |
+| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS   |
+| PSA-0008 | Formatting, lint and typecheck              | PASS   |
+| PSA-0009 | Basic CI                                    | PASS   |
 
 ## Foundational source documents
 
@@ -82,6 +82,7 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 | 2026-11-02 | Completed PSA-0001 foundational documents reconciliation report (AU-FDR-001)               |
 | 2026-11-02 | Marked PSA-0009 PASS after successful Actions runs 41427767383 (push) and 41427778229 (PR) |
 | 2026-11-02 | Corrected AU-FDR-001 open-question count from 22 to verified 25                            |
+| 2026-11-04 | Closed PSA-0002 with verified `main` branch protection and PR #1 CI evidence; PSA-0 PASS   |
 
 ## Project rules
 
