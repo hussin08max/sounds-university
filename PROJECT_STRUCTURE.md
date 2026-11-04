@@ -25,6 +25,7 @@ sounds-university/
 │   ├── institutional/            # Institutional blueprint and policy
 │   ├── academic/                 # Academic curriculum and content standards
 │   ├── governance/               # Governance and quality framework
+│   │   └── FOUNDATIONAL_DOCUMENTS_RECONCILIATION.md  # PSA-0001 reconciliation (AU-FDR-001)
 │   ├── architecture/
 │   │   ├── ADR/
 │   │   ├── diagrams/
@@ -45,6 +46,15 @@ sounds-university/
 │   └── architecture/
 ├── .github/
 │   └── workflows/
+│       └── ci.yml                # PSA-0009 quality checks (format/lint/typecheck)
+├── .prettierrc.json              # Prettier options (PSA-0008)
+├── .prettierignore               # Excludes canonical academic sources
+├── eslint.config.mjs             # ESLint flat config (PSA-0008)
+├── tsconfig.json                 # Root TypeScript check baseline
+├── toolchain-check.ts            # Minimal non-application TS input
+├── package.json
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
 ├── AGENTS.md
 ├── ARCHITECTURE.md
 ├── PROJECT_STRUCTURE.md
@@ -54,22 +64,22 @@ sounds-university/
 
 ## Placement rules
 
-| Content | Location |
-|---|---|
-| Institution-wide vision and master blueprint | `docs/institutional/` |
-| Curriculum and academic content standards | `docs/academic/` |
-| Academic governance and quality assurance | `docs/governance/` |
-| Architecture reference and diagrams | `docs/architecture/` |
-| Architecture decisions | `docs/architecture/ADR/` |
-| Security policy and threat models | `docs/security/` and `docs/architecture/threat-models/` |
-| Operational procedures/runbooks | `docs/operations/` |
-| API contracts and integration notes | `docs/api/` |
-| Phase plans, verification evidence and release notes | `docs/roadmap/` |
-| Deployable applications | `apps/` |
-| Shared packages with more than one real consumer | `packages/` |
-| Infrastructure configuration | `infra/` |
-| Prisma schema and migrations | `prisma/` |
-| Cross-application tests | `tests/` |
+| Content                                              | Location                                                |
+| ---------------------------------------------------- | ------------------------------------------------------- |
+| Institution-wide vision and master blueprint         | `docs/institutional/`                                   |
+| Curriculum and academic content standards            | `docs/academic/`                                        |
+| Academic governance and quality assurance            | `docs/governance/`                                      |
+| Architecture reference and diagrams                  | `docs/architecture/`                                    |
+| Architecture decisions                               | `docs/architecture/ADR/`                                |
+| Security policy and threat models                    | `docs/security/` and `docs/architecture/threat-models/` |
+| Operational procedures/runbooks                      | `docs/operations/`                                      |
+| API contracts and integration notes                  | `docs/api/`                                             |
+| Phase plans, verification evidence and release notes | `docs/roadmap/`                                         |
+| Deployable applications                              | `apps/`                                                 |
+| Shared packages with more than one real consumer     | `packages/`                                             |
+| Infrastructure configuration                         | `infra/`                                                |
+| Prisma schema and migrations                         | `prisma/`                                               |
+| Cross-application tests                              | `tests/`                                                |
 
 ## Rules
 
