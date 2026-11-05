@@ -1,7 +1,8 @@
 # Project Structure
 
-**Status:** Initial repository convention  
-**Last reviewed:** 2026-11-02
+**Status:** PSA-1 runtime skeleton layout
+
+**Last reviewed:** 2026-11-05
 
 This document describes the intended repository organization. It is not an instruction to create empty directories or speculative modules. Add a directory when a real task requires it.
 
@@ -9,23 +10,17 @@ This document describes the intended repository organization. It is not an instr
 
 ```text
 sounds-university/
-├── apps/                         # Deployable applications (introduced in PSA-1)
-│   ├── web/                      # Next.js public and authenticated experience
-│   ├── api/                      # NestJS HTTP API
-│   └── worker/                   # Background worker entry point when needed
-├── packages/                     # Shared, purposeful packages
-│   ├── api-client/
-│   ├── contracts/
-│   ├── config/
-│   ├── design-system/
-│   ├── i18n/
-│   ├── observability/
-│   └── test-utils/
+├── apps/
+│   ├── web/                      # Next.js 15 App Router (locale/RTL prep + landing)
+│   └── api/                      # NestJS 12 HTTP API (health/ready, swagger, logging)
+├── packages/
+│   ├── api-client/               # Typed fetch client over shared contracts
+│   └── contracts/                # Shared DTO/error/health types and constants
 ├── docs/
-│   ├── institutional/            # Institutional blueprint and policy
-│   ├── academic/                 # Academic curriculum and content standards
-│   ├── governance/               # Governance and quality framework
-│   │   └── FOUNDATIONAL_DOCUMENTS_RECONCILIATION.md  # PSA-0001 reconciliation (AU-FDR-001)
+│   ├── institutional/
+│   ├── academic/
+│   ├── governance/
+│   │   └── FOUNDATIONAL_DOCUMENTS_RECONCILIATION.md
 │   ├── architecture/
 │   │   ├── ADR/
 │   │   ├── diagrams/
@@ -33,25 +28,21 @@ sounds-university/
 │   ├── security/
 │   ├── operations/
 │   ├── api/
+│   │   └── REST_API_STRATEGY.md
 │   └── roadmap/
-├── infra/                        # Infrastructure only when introduced
-│   ├── docker/
-│   ├── nginx/
-│   ├── scripts/
-│   └── deployment/
-├── prisma/                       # Database schema and migrations (PSA-2)
-├── tests/
-│   ├── e2e/
-│   ├── security/
-│   └── architecture/
+│       ├── PSA-0-FOUNDATION.md
+│       └── PSA-1-RUNTIME-APPLICATION-SKELETON.md
+├── infra/
+│   └── docker/
+│       └── docker-compose.yml    # Postgres 16 only (no Prisma/schema in PSA-1)
 ├── .github/
 │   └── workflows/
-│       └── ci.yml                # PSA-0009 quality checks (format/lint/typecheck)
-├── .prettierrc.json              # Prettier options (PSA-0008)
-├── .prettierignore               # Excludes canonical academic sources
-├── eslint.config.mjs             # ESLint flat config (PSA-0008)
-├── tsconfig.json                 # Root TypeScript check baseline
-├── toolchain-check.ts            # Minimal non-application TS input
+│       └── ci.yml
+├── .prettierrc.json
+├── .prettierignore
+├── eslint.config.mjs
+├── tsconfig.json
+├── toolchain-check.ts
 ├── package.json
 ├── pnpm-lock.yaml
 ├── pnpm-workspace.yaml
@@ -78,7 +69,7 @@ sounds-university/
 | Deployable applications                              | `apps/`                                                 |
 | Shared packages with more than one real consumer     | `packages/`                                             |
 | Infrastructure configuration                         | `infra/`                                                |
-| Prisma schema and migrations                         | `prisma/`                                               |
+| Prisma schema and migrations                         | `prisma/` (PSA-2; not introduced yet)                   |
 | Cross-application tests                              | `tests/`                                                |
 
 ## Rules

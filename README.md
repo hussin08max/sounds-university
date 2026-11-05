@@ -6,9 +6,13 @@ Sounds University is being designed as an **audio-first university platform**. A
 
 ## Project status
 
-**Current phase:** PSA-0 — Project Foundation  
-**Current status:** IN PROGRESS  
+**Current phase:** PSA-1 — Runtime and Application Skeleton
+
+**Current status:** IN PROGRESS
+
 **Authoritative progress tracker:** [ROADMAP.md](./ROADMAP.md)
+
+**Repository visibility:** Public repository (temporary; planned return to private after development completion).
 
 No phase or task is complete merely because its documentation has been created. A task is marked `PASS` only when its acceptance criteria have been verified and evidence is recorded.
 
@@ -20,6 +24,8 @@ No phase or task is complete merely because its documentation has been created. 
 4. [Architecture entry point](./ARCHITECTURE.md)
 5. [Architecture Decision Records](./docs/architecture/ADR/README.md)
 6. [Foundational technical architecture](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md)
+7. [PSA-1 runtime skeleton tracker](./docs/roadmap/PSA-1-RUNTIME-APPLICATION-SKELETON.md)
+8. [REST API strategy](./docs/api/REST_API_STRATEGY.md)
 
 ## Foundational institutional documents
 
@@ -43,9 +49,47 @@ The following documents are authoritative project inputs and must be read before
 - Modular monolith before distributed services.
 - No claims of accreditation, degree-awarding authority or legal recognition without evidence and authorization.
 
-## Development status
+## Local development (PSA-1)
 
-The repository is currently in its foundation phase. Application code, runtime versions, CI checks and deployment configuration must not be assumed to exist until their tasks have passed verification.
+Pinned toolchain: Node.js **26.13.0**, pnpm **12.16.1**, TypeScript **6.0.3**.
+
+```text
+pnpm install
+cp apps/api/.env.example apps/api/.env
+cp apps/web/.env.example apps/web/.env.local
+docker compose -f infra/docker/docker-compose.yml up -d
+pnpm dev:api
+pnpm dev:web
+```
+
+- Web: http://localhost:3000/en
+- API health: http://localhost:3001/api/v1/health
+- API ready: http://localhost:3001/api/v1/ready
+- OpenAPI UI: http://localhost:3001/api/v1/docs
+
+Postgres via Compose is optional for liveness. When `DATABASE_URL` is unset, readiness reports `postgres: not_configured`. Schema and Prisma belong to PSA-2.
+
+### Compose lifecycle
+
+```text
+docker compose -f infra/docker/docker-compose.yml up -d
+docker compose -f infra/docker/docker-compose.yml down
+docker compose -f infra/docker/docker-compose.yml down -v
+```
+
+The `-v` form resets the local Postgres volume.
+
+### Quality gates
+
+```text
+pnpm format:check
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm test
+```
+
+Commit only `*.env.example` files. Real `.env*` files stay gitignored. Do not put privileged secrets in `NEXT_PUBLIC_*` variables.
 
 ## Working agreement
 

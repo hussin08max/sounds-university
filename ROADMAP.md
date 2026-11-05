@@ -1,9 +1,14 @@
 # Project Roadmap
 
-**Project:** Sounds University  
-**Current phase:** PSA-0 — Project Foundation  
-**Overall status:** IN PROGRESS (PSA-0 complete; PSA-1 not started)
-**Last updated:** 2026-11-04
+**Project:** Sounds University
+
+**Current phase:** PSA-1 — Runtime and Application Skeleton
+
+**Overall status:** IN PROGRESS (PSA-0 PASS; PSA-1 PARTIAL)
+
+**Last updated:** 2026-11-05
+
+**Repository visibility:** Public repository (temporary; planned return to private after development completion).
 
 This is the master progress dashboard. Task-level details and verification evidence live in `docs/roadmap/`. Update both locations whenever a task status changes.
 
@@ -27,7 +32,7 @@ This is the master progress dashboard. Task-level details and verification evide
 | Phase  | Name                                            | Status      | Detailed tracker                                                                                                      |
 | ------ | ----------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
 | PSA-0  | Project Foundation                              | PASS        | [PSA-0 checklist](./docs/roadmap/PSA-0-FOUNDATION.md)                                                                 |
-| PSA-1  | Runtime and Application Skeleton                | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
+| PSA-1  | Runtime and Application Skeleton                | PARTIAL     | [PSA-1 checklist](./docs/roadmap/PSA-1-RUNTIME-APPLICATION-SKELETON.md)                                               |
 | PSA-2  | Database and Persistence Foundation             | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-3  | Identity and Access Foundation                  | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-4  | Academic Core                                   | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
@@ -42,17 +47,25 @@ This is the master progress dashboard. Task-level details and verification evide
 
 ## Current task snapshot
 
-| Task ID  | Short description                           | Status |
-| -------- | ------------------------------------------- | ------ |
-| PSA-0001 | Reconcile and import foundational documents | PASS   |
-| PSA-0002 | Repository and branch strategy              | PASS   |
-| PSA-0003 | AGENTS.md                                   | PASS   |
-| PSA-0004 | Architecture entry point                    | PASS   |
-| PSA-0005 | ADR template/register                       | PASS   |
-| PSA-0006 | Master roadmap/status tracking              | PASS   |
-| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS   |
-| PSA-0008 | Formatting, lint and typecheck              | PASS   |
-| PSA-0009 | Basic CI                                    | PASS   |
+| Task ID  | Short description                           | Status  |
+| -------- | ------------------------------------------- | ------- |
+| PSA-0001 | Reconcile and import foundational documents | PASS    |
+| PSA-0002 | Repository and branch strategy              | PASS    |
+| PSA-0003 | AGENTS.md                                   | PASS    |
+| PSA-0004 | Architecture entry point                    | PASS    |
+| PSA-0005 | ADR template/register                       | PASS    |
+| PSA-0006 | Master roadmap/status tracking              | PASS    |
+| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS    |
+| PSA-0008 | Formatting, lint and typecheck              | PASS    |
+| PSA-0009 | Basic CI                                    | PASS    |
+| PSA-0101 | Next.js landing + locale/RTL prep           | PARTIAL |
+| PSA-0102 | NestJS API shell                            | PARTIAL |
+| PSA-0103 | Contracts + API client + REST strategy      | PARTIAL |
+| PSA-0104 | Env validation (API + web)                  | PARTIAL |
+| PSA-0105 | Docker Compose Postgres 16                  | PARTIAL |
+| PSA-0106 | Health and readiness probes                 | PARTIAL |
+| PSA-0107 | Logging + correlation ID                    | PARTIAL |
+| PSA-0108 | Safe errors + API Vitest                    | PARTIAL |
 
 ## Foundational source documents
 
@@ -83,6 +96,8 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 | 2026-11-02 | Marked PSA-0009 PASS after successful Actions runs 41427767383 (push) and 41427778229 (PR) |
 | 2026-11-02 | Corrected AU-FDR-001 open-question count from 22 to verified 25                            |
 | 2026-11-04 | Closed PSA-0002 with verified `main` branch protection and PR #1 CI evidence; PSA-0 PASS   |
+| 2026-11-04 | Started PSA-1 runtime skeleton on `feat/psa-1-runtime-skeleton` (stacked on PSA-0)         |
+| 2026-11-05 | PSA-1 skeleton verified locally; phase stays PARTIAL pending CI and Postgres image pull    |
 
 ## Project rules
 

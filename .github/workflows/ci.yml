@@ -1,4 +1,4 @@
-# PSA-0009 — minimal repository quality CI.
+# PSA-0009 / PSA-1 — repository quality CI.
 # Action SHAs are pinned and documented in docs/architecture/TOOLCHAIN.md.
 name: CI
 
@@ -6,9 +6,11 @@ on:
   pull_request:
     branches:
       - main
+      - chore/psa-0-toolchain
   push:
     branches:
       - chore/psa-0-toolchain
+      - feat/psa-1-runtime-skeleton
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -19,7 +21,7 @@ permissions:
 
 jobs:
   quality:
-    name: Format, lint, and typecheck
+    name: Format, lint, typecheck, build, test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,3 +50,16 @@ jobs:
 
       - name: Typecheck
         run: pnpm typecheck
+
+      - name: Build workspace
+        run: pnpm build
+        env:
+          NEXT_PUBLIC_API_BASE_URL: http://localhost:3001
+
+      - name: Test workspace
+        run: pnpm test
+        env:
+          NODE_ENV: test
+          API_PORT: '3001'
+          API_CORS_ORIGINS: http://localhost:3000
+          LOG_LEVEL: silent

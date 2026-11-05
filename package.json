@@ -9,10 +9,14 @@
     "pnpm": "12.16.1"
   },
   "scripts": {
+    "dev:web": "pnpm --filter @sounds-university/web dev",
+    "dev:api": "pnpm --filter @sounds-university/api start:dev",
+    "build": "pnpm --filter @sounds-university/contracts build && pnpm --filter @sounds-university/api-client build && pnpm --filter @sounds-university/api build && pnpm --filter @sounds-university/web build",
+    "test": "pnpm -r --if-present test",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json && pnpm -r --if-present typecheck"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

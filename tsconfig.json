@@ -20,6 +20,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
-  "exclude": ["node_modules", "dist", "build", "out", "coverage", ".next"]
+  "include": ["toolchain-check.ts"],
+  "exclude": ["node_modules", "dist", "build", "out", "coverage", ".next", "apps", "packages"]
 }
