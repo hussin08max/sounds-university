@@ -85,19 +85,19 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 
 ## Change log
 
-| Date       | Change                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------ |
-| 2026-11-02 | Initial repository structure and governance documentation created                          |
-| 2026-11-02 | Imported five canonical source documents and supplementary planning notes                  |
-| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open             |
-| 2026-11-02 | Verified PSA-0007 toolchain pin and lockfile; established PSA-0008 format/lint/typecheck   |
-| 2026-11-02 | Added SHA-pinned GitHub Actions CI workflow for PSA-0009; awaiting successful Actions run  |
-| 2026-11-02 | Completed PSA-0001 foundational documents reconciliation report (AU-FDR-001)               |
-| 2026-11-02 | Marked PSA-0009 PASS after successful Actions runs 41427767383 (push) and 41427778229 (PR) |
-| 2026-11-02 | Corrected AU-FDR-001 open-question count from 22 to verified 25                            |
-| 2026-11-04 | Closed PSA-0002 with verified `main` branch protection and PR #1 CI evidence; PSA-0 PASS   |
-| 2026-11-04 | Started PSA-1 runtime skeleton on `feat/psa-1-runtime-skeleton` (stacked on PSA-0)         |
-| 2026-11-05 | PSA-1 skeleton verified locally; phase stays PARTIAL pending CI and Postgres image pull    |
+| Date       | Change                                                                                         |
+| ---------- | ---------------------------------------------------------------------------------------------- |
+| 2026-11-02 | Initial repository structure and governance documentation created                              |
+| 2026-11-02 | Imported five canonical source documents and supplementary planning notes                      |
+| 2026-11-02 | Added pinned toolchain baseline; local clean-install verification remains open                 |
+| 2026-11-02 | Verified PSA-0007 toolchain pin and lockfile; established PSA-0008 format/lint/typecheck       |
+| 2026-11-02 | Added SHA-pinned GitHub Actions CI workflow for PSA-0009; awaiting successful Actions run      |
+| 2026-11-02 | Completed PSA-0001 foundational documents reconciliation report (AU-FDR-001)                   |
+| 2026-11-02 | Marked PSA-0009 PASS after successful Actions runs 41427767383 (push) and 41427778229 (PR)     |
+| 2026-11-02 | Corrected AU-FDR-001 open-question count from 22 to verified 25                                |
+| 2026-11-04 | Closed PSA-0002 with verified `main` branch protection and PR #1 CI evidence; PSA-0 PASS       |
+| 2026-11-04 | Started PSA-1 runtime skeleton on `feat/psa-1-runtime-skeleton` (stacked on PSA-0)             |
+| 2026-11-05 | PSA-1 CI run 42008338326 succeeded; phase stays PARTIAL until the Postgres image pull succeeds |
 
 ## Project rules
 
