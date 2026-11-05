@@ -8,7 +8,7 @@ Sounds University is being designed as an **audio-first university platform**. A
 
 **Current phase:** PSA-1 — Runtime and Application Skeleton
 
-**Current status:** PSA-1 PARTIAL pending final CI
+**Current status:** PSA-1 PASS
 
 **Authoritative progress tracker:** [ROADMAP.md](./ROADMAP.md)
 

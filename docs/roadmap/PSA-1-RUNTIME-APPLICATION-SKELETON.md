@@ -1,6 +1,6 @@
 # PSA-1 — Runtime and Application Skeleton
 
-**Phase status:** PARTIAL
+**Phase status:** PASS
 **Branch:** `feat/psa-1-runtime-skeleton` (stacked on `chore/psa-0-toolchain`)
 **Last updated:** 2026-11-05
 
@@ -33,7 +33,7 @@ PSA-0105 is rejected because the owner requires host-based development. PostgreS
 - [x] Web can call API health via `@sounds-university/api-client` with a correlation ID
 - [x] OpenAPI UI reachable at `/api/v1/docs`
 - [x] No Prisma schema, auth, domain modules, or Docker workflow
-- [ ] CI green on the final branch push
+- [x] CI green on the final branch push
 
 ## Explicit exclusions
 
@@ -74,7 +74,7 @@ Filled after the docker-free verification run.
 | Build + API tests  | PASS         | Nest and Next production builds exit 0. Vitest: 3 passed (health, process ready, safe 500).                                                                                |
 | Host runtime       | PASS         | API on port 3001 and web on port 3025. Health echoed `x-correlation-id`. Ready checks `config: ok`. `/en` and `/ar` (`dir=rtl`) showed a reachable API and correlation ID. |
 | PostgreSQL         | NOT VERIFIED | Host service `postgresql-x64-18` is running on port 5432. The example role `sounds` was rejected. PSA-1 does not use the database.                                         |
-| CI on final push   | TBD          | Record the Actions run for the docker-free commit.                                                                                                                         |
+| CI on final push   | PASS         | Actions run [42010023195](https://github.com/hussin08max/sounds-university/actions/runs/42010023195) on `752a466`, conclusion `success`.                                   |
 
 ## Change log
 
@@ -83,3 +83,4 @@ Filled after the docker-free verification run.
 | 2026-11-04 | PSA-1 tracker created; implementation start                                           |
 | 2026-11-05 | Runtime skeleton added. CI run 42008338326 succeeded before Docker removal.           |
 | 2026-11-05 | Docker removed from the development workflow. Readiness is process-level until PSA-2. |
+| 2026-11-05 | Host verification and CI run 42010023195 succeeded. PSA-1 is PASS.                    |

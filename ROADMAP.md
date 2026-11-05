@@ -4,7 +4,7 @@
 
 **Current phase:** PSA-1 — Runtime and Application Skeleton
 
-**Overall status:** IN PROGRESS (PSA-0 PASS; PSA-1 PARTIAL pending final CI)
+**Overall status:** IN PROGRESS (PSA-0 PASS; PSA-1 PASS)
 
 **Last updated:** 2026-11-05
 
@@ -32,7 +32,7 @@ This is the master progress dashboard. Task-level details and verification evide
 | Phase  | Name                                            | Status      | Detailed tracker                                                                                                      |
 | ------ | ----------------------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
 | PSA-0  | Project Foundation                              | PASS        | [PSA-0 checklist](./docs/roadmap/PSA-0-FOUNDATION.md)                                                                 |
-| PSA-1  | Runtime and Application Skeleton                | PARTIAL     | [PSA-1 checklist](./docs/roadmap/PSA-1-RUNTIME-APPLICATION-SKELETON.md)                                               |
+| PSA-1  | Runtime and Application Skeleton                | PASS        | [PSA-1 checklist](./docs/roadmap/PSA-1-RUNTIME-APPLICATION-SKELETON.md)                                               |
 | PSA-2  | Database and Persistence Foundation             | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-3  | Identity and Access Foundation                  | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
 | PSA-4  | Academic Core                                   | NOT STARTED | [Technical roadmap](./docs/architecture/PLATFORM_SOFTWARE_ARCHITECTURE.md#29-engineering-roadmap-and-execution-gates) |
@@ -99,6 +99,7 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 | 2026-11-04 | Started PSA-1 runtime skeleton on `feat/psa-1-runtime-skeleton` (stacked on PSA-0)             |
 | 2026-11-05 | PSA-1 CI run 42008338326 succeeded; phase stays PARTIAL until the Postgres image pull succeeds |
 | 2026-11-05 | Owner rejected Docker. PSA-0105 is REJECTED. Development runs on the host.                     |
+| 2026-11-05 | PSA-1 PASS after host-based verification and CI run 42010023195 on `752a466`.                  |
 
 ## Project rules
 
