@@ -24,6 +24,12 @@ Frontend typed access: `@sounds-university/api-client`.
 
 All non-2xx JSON errors use `ApiErrorBody`. Client-facing messages are safe. Stack traces and internal exception names are logged server-side only.
 
+## Health and readiness
+
+- `GET /api/v1/health` is liveness: the API process can respond.
+- `GET /api/v1/ready` is process readiness: validated configuration is loaded and the API can accept its current HTTP workload.
+- PSA-1 does not check PostgreSQL. Database readiness belongs to PSA-2.
+
 ## Evolution
 
 Additive OpenAPI changes are preferred. Breaking changes require a new version prefix or an accepted ADR. Do not silently diverge request/response types between apps and `packages/contracts`.

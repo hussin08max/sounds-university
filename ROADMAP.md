@@ -4,7 +4,7 @@
 
 **Current phase:** PSA-1 — Runtime and Application Skeleton
 
-**Overall status:** IN PROGRESS (PSA-0 PASS; PSA-1 PARTIAL)
+**Overall status:** IN PROGRESS (PSA-0 PASS; PSA-1 PARTIAL pending final CI)
 
 **Last updated:** 2026-11-05
 
@@ -47,25 +47,25 @@ This is the master progress dashboard. Task-level details and verification evide
 
 ## Current task snapshot
 
-| Task ID  | Short description                           | Status  |
-| -------- | ------------------------------------------- | ------- |
-| PSA-0001 | Reconcile and import foundational documents | PASS    |
-| PSA-0002 | Repository and branch strategy              | PASS    |
-| PSA-0003 | AGENTS.md                                   | PASS    |
-| PSA-0004 | Architecture entry point                    | PASS    |
-| PSA-0005 | ADR template/register                       | PASS    |
-| PSA-0006 | Master roadmap/status tracking              | PASS    |
-| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS    |
-| PSA-0008 | Formatting, lint and typecheck              | PASS    |
-| PSA-0009 | Basic CI                                    | PASS    |
-| PSA-0101 | Next.js landing + locale/RTL prep           | PARTIAL |
-| PSA-0102 | NestJS API shell                            | PARTIAL |
-| PSA-0103 | Contracts + API client + REST strategy      | PARTIAL |
-| PSA-0104 | Env validation (API + web)                  | PARTIAL |
-| PSA-0105 | Docker Compose Postgres 16                  | PARTIAL |
-| PSA-0106 | Health and readiness probes                 | PARTIAL |
-| PSA-0107 | Logging + correlation ID                    | PARTIAL |
-| PSA-0108 | Safe errors + API Vitest                    | PARTIAL |
+| Task ID  | Short description                           | Status   |
+| -------- | ------------------------------------------- | -------- |
+| PSA-0001 | Reconcile and import foundational documents | PASS     |
+| PSA-0002 | Repository and branch strategy              | PASS     |
+| PSA-0003 | AGENTS.md                                   | PASS     |
+| PSA-0004 | Architecture entry point                    | PASS     |
+| PSA-0005 | ADR template/register                       | PASS     |
+| PSA-0006 | Master roadmap/status tracking              | PASS     |
+| PSA-0007 | Pin Node.js, pnpm and TypeScript            | PASS     |
+| PSA-0008 | Formatting, lint and typecheck              | PASS     |
+| PSA-0009 | Basic CI                                    | PASS     |
+| PSA-0101 | Next.js landing + locale/RTL prep           | PASS     |
+| PSA-0102 | NestJS API shell                            | PASS     |
+| PSA-0103 | Contracts + API client + REST strategy      | PASS     |
+| PSA-0104 | Env validation (API + web)                  | PASS     |
+| PSA-0105 | Docker local dependencies                   | REJECTED |
+| PSA-0106 | Health and readiness probes                 | PASS     |
+| PSA-0107 | Logging + correlation ID                    | PASS     |
+| PSA-0108 | Safe errors + API Vitest                    | PASS     |
 
 ## Foundational source documents
 
@@ -98,6 +98,7 @@ Follow the dependency-ordered phases in AU-PSA-001. Do not begin PSA-1 applicati
 | 2026-11-04 | Closed PSA-0002 with verified `main` branch protection and PR #1 CI evidence; PSA-0 PASS       |
 | 2026-11-04 | Started PSA-1 runtime skeleton on `feat/psa-1-runtime-skeleton` (stacked on PSA-0)             |
 | 2026-11-05 | PSA-1 CI run 42008338326 succeeded; phase stays PARTIAL until the Postgres image pull succeeds |
+| 2026-11-05 | Owner rejected Docker. PSA-0105 is REJECTED. Development runs on the host.                     |
 
 ## Project rules
 

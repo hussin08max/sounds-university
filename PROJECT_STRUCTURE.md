@@ -32,9 +32,6 @@ sounds-university/
 │   └── roadmap/
 │       ├── PSA-0-FOUNDATION.md
 │       └── PSA-1-RUNTIME-APPLICATION-SKELETON.md
-├── infra/
-│   └── docker/
-│       └── docker-compose.yml    # Postgres 16 only (no Prisma/schema in PSA-1)
 ├── .github/
 │   └── workflows/
 │       └── ci.yml
@@ -68,7 +65,7 @@ sounds-university/
 | Phase plans, verification evidence and release notes | `docs/roadmap/`                                         |
 | Deployable applications                              | `apps/`                                                 |
 | Shared packages with more than one real consumer     | `packages/`                                             |
-| Infrastructure configuration                         | `infra/`                                                |
+| Infrastructure configuration                         | `infra/` when a real host configuration is introduced   |
 | Prisma schema and migrations                         | `prisma/` (PSA-2; not introduced yet)                   |
 | Cross-application tests                              | `tests/`                                                |
 

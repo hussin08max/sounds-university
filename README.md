@@ -8,7 +8,7 @@ Sounds University is being designed as an **audio-first university platform**. A
 
 **Current phase:** PSA-1 — Runtime and Application Skeleton
 
-**Current status:** IN PROGRESS
+**Current status:** PSA-1 PARTIAL pending final CI
 
 **Authoritative progress tracker:** [ROADMAP.md](./ROADMAP.md)
 
@@ -53,31 +53,28 @@ The following documents are authoritative project inputs and must be read before
 
 Pinned toolchain: Node.js **26.13.0**, pnpm **12.16.1**, TypeScript **6.0.3**.
 
+Development runs directly on the host. Docker is not used.
+
 ```text
 pnpm install
 cp apps/api/.env.example apps/api/.env
 cp apps/web/.env.example apps/web/.env.local
-docker compose -f infra/docker/docker-compose.yml up -d
 pnpm dev:api
 pnpm dev:web
 ```
 
-- Web: http://localhost:3000/en
-- API health: http://localhost:3001/api/v1/health
-- API ready: http://localhost:3001/api/v1/ready
+- Web: http://localhost:3000/en and http://localhost:3000/ar
+- API health (liveness): http://localhost:3001/api/v1/health
+- API ready (process readiness): http://localhost:3001/api/v1/ready
 - OpenAPI UI: http://localhost:3001/api/v1/docs
 
-Postgres via Compose is optional for liveness. When `DATABASE_URL` is unset, readiness reports `postgres: not_configured`. Schema and Prisma belong to PSA-2.
-
-### Compose lifecycle
+PostgreSQL remains the approved database for later phases. PSA-1 does not connect to it and does not install it. When a host PostgreSQL server already exists, the future connection string is:
 
 ```text
-docker compose -f infra/docker/docker-compose.yml up -d
-docker compose -f infra/docker/docker-compose.yml down
-docker compose -f infra/docker/docker-compose.yml down -v
+postgresql://USER:PASSWORD@localhost:5432/sounds_university
 ```
 
-The `-v` form resets the local Postgres volume.
+Put that value in `DATABASE_URL` inside `apps/api/.env` only. Do not commit the real file. Schema, Prisma, and database readiness belong to PSA-2. Readiness in PSA-1 reports process configuration only.
 
 ### Quality gates
 

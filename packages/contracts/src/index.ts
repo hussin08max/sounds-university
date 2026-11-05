@@ -14,14 +14,13 @@ export type HealthResponse = {
   timestamp: string;
 };
 
-export type ReadyDependencyStatus = 'ok' | 'not_configured' | 'unavailable';
+export type ReadyDependencyStatus = 'ok';
 
 export type ReadyResponse = {
-  status: 'ready' | 'not_ready';
+  status: 'ready';
   service: 'api';
   timestamp: string;
   checks: {
     config: ReadyDependencyStatus;
-    postgres: ReadyDependencyStatus;
   };
 };
